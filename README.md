@@ -1,1 +1,1 @@
-Contains Curriculum vitae elaborated with my own fork of datadrivencv. R package
+Contains Curriculum vitae elaborated with my own version of datadrivencv. check my repository if you like my version.
