@@ -151,8 +151,8 @@ print_section <- function(cv, section_id, glue_template = "default"){
 
   section_data <- dplyr::filter(cv$entries_data, section == section_id)
   section_data <- rbind(
-    section_data %>% filter(title == "R / Shiny developer"),
-    section_data %>% filter(title != "R / Shiny developer")
+    section_data %>% filter(title == "Data Scientist"),
+    section_data %>% filter(title != "Data Scientist")
   )
   write.csv(section_data,glue::glue("section_data_{section_id}.csv"))
 

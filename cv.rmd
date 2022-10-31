@@ -65,14 +65,24 @@ source("cv_printing_functions.r")
 CV %>% print_contact_info()
 ```
 
-R packages used {#skills}
+Tools used {#skills}
 --------------------------------------------------------------------------------
 
 ```{r,fig.height=3}
 
-cv1<-cv1 %>% select(description_2) %>% tidytext::unnest_tokens(word,description_2) %>% count(word,sort = TRUE) %>% 
-  wordcloud2::wordcloud2(size=1.1,shape = 'pentagon',backgroundColor = "f7fbff") 
+cv1 <- cv1 %>% 
+  select(description_2) %>% 
+  tidytext::unnest_tokens(word,description_2) %>% 
+  count(word,sort = TRUE) %>% 
+  wordcloud2::wordcloud2(
+    size=2.9,
+    shape = 'pentagon',
+    color = "random-dark",
+    backgroundColor = "#d9dffa"
+  ) 
+
 htmlwidgets::saveWidget(cv1,"1.html",selfcontained = F)
+
 webshot::webshot("1.html","1.png",vwidth = 1200, vheight = 800, delay =10)
 ```
 
